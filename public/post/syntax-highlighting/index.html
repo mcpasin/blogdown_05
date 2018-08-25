@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>Syntax Highlighting - Jane - A super concise theme for Hugo</title>
+  <title>Syntax Highlighting - Marco Pasin - my new data blog</title>
   <link rel="alternate" hreflang="en" href="/" />
 
 <meta name="renderer" content="webkit" />
@@ -22,7 +22,7 @@
   <meta name="description" content="function helloWorld () { alert(&amp;quot;Hello, World!&amp;quot;) }  
 " />
 
-  <meta name="keywords" content="Hugo, theme, jane" />
+  <meta name="keywords" content="blog, mcpasin, marco" />
 
 
 
@@ -117,7 +117,7 @@
 <body>
   <div id="mobile-navbar" class="mobile-navbar">
   <div class="mobile-header-logo">
-    <a href="/" class="logo">hey it&#39;s marco here!</a>
+    <a href="/" class="logo">Marco Pasin</a>
   </div>
   <div class="mobile-navbar-icon">
     <span></span>
@@ -133,17 +133,17 @@
         <li class="mobile-menu-item">Archives</li>
       </a><a href="/tags/">
         <li class="mobile-menu-item">Tags</li>
-      </a><a href="/categories/">
-        <li class="mobile-menu-item">Categories</li>
       </a><a href="/about/">
-        <li class="mobile-menu-item">About this blog</li>
+        <li class="mobile-menu-item">About me</li>
+      </a><a href="/portfolio/">
+        <li class="mobile-menu-item">Portfolio</li>
       </a>
   </ul>
 </nav>
 
   <header id="header" class="header container">
     <div class="logo-wrapper">
-  <a href="/" class="logo">hey it&#39;s marco here!</a>
+  <a href="/" class="logo">Marco Pasin</a>
 </div>
 
 <nav class="site-navbar">
@@ -155,9 +155,9 @@
       </li><li class="menu-item">
         <a class="menu-item-link" href="/tags/">Tags</a>
       </li><li class="menu-item">
-        <a class="menu-item-link" href="/categories/">Categories</a>
+        <a class="menu-item-link" href="/about/">About me</a>
       </li><li class="menu-item">
-        <a class="menu-item-link" href="/about/">About this blog</a>
+        <a class="menu-item-link" href="/portfolio/">Portfolio</a>
       </li>
   </ul>
 </nav>
@@ -318,7 +318,25 @@ func main()
 
   
 
-  
+  <div id="comments-gitment"></div>
+  <link rel="stylesheet" href="/lib/gitment/gitment-0.0.3.min.css">
+    <script src="/lib/gitment/gitment-0.0.3.min.js"></script>
+  <script type="text/javascript">
+  const gitment = new Gitment({
+    id: '2011-08-30 16:01:23 \x2b0800 \x2b0800',
+    title: 'Syntax Highlighting',
+    link: decodeURI(location.href),
+    desc: '\x3cpre\x3e\x3ccode class=\x22language-js\x22\x3efunction helloWorld () {\n  alert(\x26quot;Hello, World!\x26quot;)\n}\n\x3c\/code\x3e\x3c\/pre\x3e\n\n\x3cp\x3e\x3c\/p\x3e',
+    owner: 'mcpasin',
+    repo: 'https:\/\/github.com\/mcpasin\/blogdown_05',
+    oauth: {
+      client_id: '',
+      client_secret: ''
+    }
+  })
+  gitment.render('comments-gitment')
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://github.com/imsun/gitment">comments powered by gitment.</a></noscript>
   </article>
         </div>
       </div>
@@ -326,19 +344,12 @@ func main()
 
     <footer id="footer" class="footer">
       <div class="social-links">
-      <a href="mailto:your@email.com" class="iconfont icon-email" title="email"></a>
+      <a href="mailto:mcpasin@gmail.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://www.linkedin.com/in/marcopasin/" class="iconfont icon-linkedin" title="linkedin"></a>
+      <a href="https://twitter.com/mcpasin" class="iconfont icon-twitter" title="twitter"></a>
+      <a href="https://github.com/mcpasin" class="iconfont icon-github" title="github"></a>
       <a href="http://localhost:1313" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
-      <a href="http://localhost:1313" class="iconfont icon-twitter" title="twitter"></a>
-      <a href="http://localhost:1313" class="iconfont icon-facebook" title="facebook"></a>
-      <a href="http://localhost:1313" class="iconfont icon-linkedin" title="linkedin"></a>
-      <a href="http://localhost:1313" class="iconfont icon-google" title="google"></a>
-      <a href="http://localhost:1313" class="iconfont icon-github" title="github"></a>
-      <a href="http://localhost:1313" class="iconfont icon-weibo" title="weibo"></a>
-      <a href="http://localhost:1313" class="iconfont icon-zhihu" title="zhihu"></a>
-      <a href="http://localhost:1313" class="iconfont icon-douban" title="douban"></a>
-      <a href="http://localhost:1313" class="iconfont icon-pocket" title="pocket"></a>
-      <a href="http://localhost:1313" class="iconfont icon-tumblr" title="tumblr"></a>
-      <a href="http://localhost:1313" class="iconfont icon-instagram" title="instagram"></a>
+      <a href="https://getpocket.com/@53fA5g32dfv50Tk48epbymvp68T5daM9f5bL29T89eD5b5nWfSK3eE87jo2hy73c" class="iconfont icon-pocket" title="pocket"></a>
   <a href="/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
 </div>
 

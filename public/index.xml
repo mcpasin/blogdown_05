@@ -1,35 +1,100 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Jane - A super concise theme for Hugo</title>
+    <title>Marco Pasin - my new data blog</title>
     <link>/</link>
-    <description>Recent content on Jane - A super concise theme for Hugo</description>
+    <description>Recent content on Marco Pasin - my new data blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 20 Aug 2017 21:38:52 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 25 Mar 2018 21:38:52 +0800</lastBuildDate>
     
         <atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>About this blog</title>
+      <title>About me</title>
       <link>/about/</link>
-      <pubDate>Sun, 20 Aug 2017 21:38:52 +0800</pubDate>
+      <pubDate>Sun, 25 Mar 2018 21:38:52 +0800</pubDate>
       
       <guid>/about/</guid>
       
-        <description>&lt;p&gt;Hugo is a static site engine written in Go.&lt;/p&gt;
+        <description>
 
-&lt;p&gt;It makes use of a variety of open source projects including:&lt;/p&gt;
+&lt;p&gt;I am Product Data Analyst at OLX Group, a network of online trading platforms where
+people can buy and sell everything.&lt;/p&gt;
 
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/spf13/cobra&#34;&gt;Cobra&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/spf13/viper&#34;&gt;Viper&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/spf13/jWalterWeatherman&#34;&gt;J Walter Weatherman&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/spf13/cast&#34;&gt;Cast&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
+&lt;p&gt;My interest include data science, visualizations and web analytics. When it comes to programming I mostly code with R.&lt;/p&gt;
 
-&lt;p&gt;Learn more and contribute on &lt;a href=&#34;https://github.com/gohugoio&#34;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;This is my personal site where I post about data analysis. You can also find some of
+my previous projects under the Portfolio section. I am also the founder of &lt;a href=&#34;http://www.analyticsforfun.com/&#34;&gt;analyticsforfun.com&lt;/a&gt;, a blog mostly focused on web analytics.&lt;/p&gt;
+
+&lt;p&gt;Feel fre to connect  and contact me for any professional collaboration.&lt;/p&gt;
+
+&lt;h1 id=&#34;cobra-https-github-com-spf13-cobra&#34;&gt;* &lt;a href=&#34;https://github.com/spf13/cobra&#34;&gt;Cobra&lt;/a&gt;&lt;/h1&gt;
+
+&lt;h1 id=&#34;viper-https-github-com-spf13-viper&#34;&gt;* &lt;a href=&#34;https://github.com/spf13/viper&#34;&gt;Viper&lt;/a&gt;&lt;/h1&gt;
+
+&lt;h1 id=&#34;j-walter-weatherman-https-github-com-spf13-jwalterweatherman&#34;&gt;* &lt;a href=&#34;https://github.com/spf13/jWalterWeatherman&#34;&gt;J Walter Weatherman&lt;/a&gt;&lt;/h1&gt;
+
+&lt;h1 id=&#34;cast-https-github-com-spf13-cast&#34;&gt;* &lt;a href=&#34;https://github.com/spf13/cast&#34;&gt;Cast&lt;/a&gt;&lt;/h1&gt;
+
+&lt;h1 id=&#34;learn-more-and-contribute-on-github-https-github-com-gohugoio&#34;&gt;Learn more and contribute on &lt;a href=&#34;https://github.com/gohugoio&#34;&gt;GitHub&lt;/a&gt;.&lt;/h1&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>Portfolio</title>
+      <link>/portfolio/</link>
+      <pubDate>Sun, 20 Aug 2017 21:38:52 +0800</pubDate>
+      
+      <guid>/portfolio/</guid>
+      
+        <description>
+
+&lt;p&gt;Here are some data products &amp;amp; analysis I have built recently:&lt;/p&gt;
+
+&lt;h3 id=&#34;next-word-predictor-https-mcpasincoursera-shinyapps-io-next-word-predictor&#34;&gt;* &lt;a href=&#34;https://mcpasincoursera.shinyapps.io/next_word_predictor/&#34;&gt;Next Word Predictor&lt;/a&gt;&lt;/h3&gt;
+
+&lt;h3 id=&#34;live-earthquakes-https-mcpasincoursera-shinyapps-io-live-earthquakes&#34;&gt;* &lt;a href=&#34;https://mcpasincoursera.shinyapps.io/live_earthquakes/&#34;&gt;Live Earthquakes&lt;/a&gt;&lt;/h3&gt;
+
+&lt;h3 id=&#34;google-analytics-shiny-dashboard-https-mcpasin-shinyapps-io-playinggoogleanalyticsdataviz&#34;&gt;* &lt;a href=&#34;https://mcpasin.shinyapps.io/PlayingGoogleAnalyticsDataViz/&#34;&gt;Google Analytics Shiny Dashboard&lt;/a&gt;&lt;/h3&gt;
+
+&lt;h3 id=&#34;ecommerce-products-matrix-http-www-analyticsforfun-com-2017-03-actionable-data-analysis-for-ecommerce-html&#34;&gt;* &lt;a href=&#34;http://www.analyticsforfun.com/2017/03/actionable-data-analysis-for-ecommerce.html&#34;&gt;Ecommerce Products Matrix&lt;/a&gt;&lt;/h3&gt;
+
+&lt;h3 id=&#34;where-to-live-in-barcelona-https-public-tableau-com-profile-marco-pasin-vizhome-barcelonadashboard-dashboard&#34;&gt;* &lt;a href=&#34;https://public.tableau.com/profile/marco.pasin#!/vizhome/BarcelonaDashboard/DASHBOARD&#34;&gt;Where to Live in Barcelona?&lt;/a&gt;&lt;/h3&gt;
+
+&lt;h3 id=&#34;stackoverflow-questions-analysis-http-www-analyticsforfun-com-2016-09-analyzing-stack-overflow-questions-and-html&#34;&gt;* &lt;a href=&#34;http://www.analyticsforfun.com/2016/09/analyzing-stack-overflow-questions-and.html&#34;&gt;Stackoverflow Questions Analysis&lt;/a&gt;&lt;/h3&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>marco r markdown</title>
+      <link>/post/2018-03-25-marco-rmarkdown/</link>
+      <pubDate>Fri, 23 Mar 2018 20:13:14 +0000</pubDate>
+      
+      <guid>/post/2018-03-25-marco-rmarkdown/</guid>
+      
+        <description>&lt;div id=&#34;r-markdown&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;R Markdown&lt;/h2&gt;
+&lt;p&gt;This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see &lt;a href=&#34;http://rmarkdown.rstudio.com&#34; class=&#34;uri&#34;&gt;http://rmarkdown.rstudio.com&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;When you click the &lt;strong&gt;Knit&lt;/strong&gt; button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;summary(cars)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;##      speed           dist       
+##  Min.   : 4.0   Min.   :  2.00  
+##  1st Qu.:12.0   1st Qu.: 26.00  
+##  Median :15.0   Median : 36.00  
+##  Mean   :15.4   Mean   : 42.98  
+##  3rd Qu.:19.0   3rd Qu.: 56.00  
+##  Max.   :25.0   Max.   :120.00&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;including-plots&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Including Plots&lt;/h2&gt;
+&lt;p&gt;You can also embed plots, for example:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2018-03-25-marco-rmarkdown_files/figure-html/pressure-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;Note that the &lt;code&gt;echo = FALSE&lt;/code&gt; parameter was added to the code chunk to prevent printing of the R code that generated the plot.&lt;/p&gt;
+&lt;/div&gt;
 </description>
       
     </item>
@@ -755,7 +820,7 @@ __double underscores__
 
 
 &lt;div style=&#34;position: relative; padding-bottom: 56.25%; padding-top: 30px; height: 0; overflow: hidden;&#34;&gt;
-  &lt;iframe src=&#34;//www.youtube.com/embed/w7Ft2ymGmfc&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%;&#34; allowfullscreen frameborder=&#34;0&#34; title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
+  &lt;iframe src=&#34;//www.youtube.com/embed/rL--gQ2AvJY&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%;&#34; allowfullscreen frameborder=&#34;0&#34; title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
  &lt;/div&gt;
 
 

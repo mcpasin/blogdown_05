@@ -10,6 +10,20 @@
   </url>
   
   <url>
+    <loc>/portfolio/</loc>
+    <lastmod>2017-08-28T21:41:52+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>/post/2018-03-25-marco-rmarkdown/</loc>
+    <lastmod>2018-03-23T20:13:14+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>/post/jane-theme-preview/</loc>
     <lastmod>2018-03-07T16:01:23+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -163,15 +177,22 @@
   </url>
   
   <url>
-    <loc>/</loc>
-    <lastmod>2017-08-28T21:41:52+08:00</lastmod>
+    <loc>/tags/jekyll/</loc>
+    <lastmod>2014-03-10T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/tags/jekyll/</loc>
-    <lastmod>2014-03-10T00:00:00+00:00</lastmod>
+    <loc>/tags/marco/</loc>
+    <lastmod>2018-03-23T20:13:14+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/</loc>
+    <lastmod>2017-08-28T21:41:52+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -185,7 +206,7 @@
   
   <url>
     <loc>/post/</loc>
-    <lastmod>2018-03-07T16:01:23+08:00</lastmod>
+    <lastmod>2018-03-23T20:13:14+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -199,14 +220,14 @@
   
   <url>
     <loc>/categories/r/</loc>
-    <lastmod>2015-07-23T21:13:14-05:00</lastmod>
+    <lastmod>2018-03-23T20:13:14+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>/tags/r-markdown/</loc>
-    <lastmod>2015-07-23T21:13:14-05:00</lastmod>
+    <lastmod>2018-03-23T20:13:14+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>

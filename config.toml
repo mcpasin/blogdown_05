@@ -39,16 +39,12 @@ copyright = ""            # default: author.name ↓        # 默认为下面配
   weight = 30
   identifier = "tags"
   url = "/tags/"
-[[menu.main]]
-  name = "Categories"
-  weight = 40
-  identifier = "categories"
-  url = "/categories/"
-[[menu.main]]
-  name = "Portfolio"
-  weight = 40
-  identifier = "portfolio"
-  url = "/portfolio/"
+#[[menu.main]]
+ # name = "Categories"
+ # weight = 40
+ # identifier = "categories"
+ # url = "/categories/"
+
 
 [params]
   debug = false             # If true, load `eruda.min.js`. See https://github.com/liriliri/eruda
@@ -58,12 +54,12 @@ copyright = ""            # default: author.name ↓        # 默认为下面配
   rssFullContent = true     # if false, Rss feed instead of the summary
 
   # site info (optional)                                  # 站点信息（可选，不需要的可以直接注释掉）
-  logoTitle = "hey it's marco here!"        # default: the title value    # 默认值: 上面设置的title值
-  keywords = ["Hugo", "theme","jane"]
-  description = "Hugo theme jane example site."
+  logoTitle = "Marco Pasin"        # default: the title value    # 默认值: 上面设置的title值
+  keywords = ["blog", "mcpasin","marco"]
+  description = "Marco Pasin personal site"
 
   # paginate of archives, tags and categories             # 归档、标签、分类每页显示的文章数目，建议修改为一个较大的值
-  archive-paginate = 3
+  archive-paginate = 2
 
   # paginate style, default use numbered pagination links
   # if true, use original "Previous" and "Next" links.
@@ -106,8 +102,8 @@ copyright = ""            # default: author.name ↓        # 默认为下面配
     gitmentCSS = '<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitment@0.0.3/style/default.min.css" crossorigin="anonymous">'
 
   [params.gitment]          # Gitment is a comment system based on GitHub issues. see https://github.com/imsun/gitment
-    owner = ""              # Your GitHub ID
-    repo = ""               # The repo to store comments
+    owner = "mcpasin"              # Your GitHub ID
+    repo = "https://github.com/mcpasin/blogdown_05"               # The repo to store comments
     clientId = ""           # Your client ID
     clientSecret = ""       # Your client secret
 
@@ -118,16 +114,17 @@ copyright = ""            # default: author.name ↓        # 默认为下面配
     alipay = "/path/to/your/alipay-qr-code.png"           # 支付宝二维码
 
   [params.social]                                         # 社交链接
-    a-email = "mailto:your@email.com"
-    b-stack-overflow = "http://localhost:1313"
+    a-email = "mailto:mcpasin@gmail.com"
+    b-linkedin = "https://www.linkedin.com/in/marcopasin/"
     c-twitter = "https://twitter.com/mcpasin"
-    d-facebook = "http://localhost:1313"
-    e-linkedin = "http://localhost:1313"
-    f-google = "http://localhost:1313"
-    g-github = "http://localhost:1313"
-    h-weibo = "http://localhost:1313"
-    i-zhihu = "http://localhost:1313"
-    j-douban = "http://localhost:1313"
-    k-pocket = "http://localhost:1313"
-    l-tumblr = "http://localhost:1313"
-    m-instagram = "http://localhost:1313"
+    #d-facebook = "http://localhost:1313"
+    d-github = "https://github.com/mcpasin"
+    #f-google = "http://localhost:1313"
+    
+    #h-weibo = "http://localhost:1313"
+    #i-zhihu = "http://localhost:1313"
+    #j-douban = "http://localhost:1313"
+    f-pocket = "https://getpocket.com/@53fA5g32dfv50Tk48epbymvp68T5daM9f5bL29T89eD5b5nWfSK3eE87jo2hy73c"
+    #l-tumblr = "http://localhost:1313"
+    #m-instagram = "http://localhost:1313"
+    e-stack-overflow = "http://localhost:1313"
