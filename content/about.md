@@ -8,7 +8,7 @@ comment: false
 mathjax: false
 ---
 
-I am a Senior Data Analyst at ..., a network of online trading platforms where
+I am currently working as Product  Data Analyst at ..., a network of online trading platforms where
 people can buy and sell everything. 
 
 My interest include data science, visualizations and web analytics. When it comes to programming I mostly code with R.
