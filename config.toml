@@ -114,17 +114,18 @@ copyright = ""            # default: author.name ↓        # 默认为下面配
     alipay = "/path/to/your/alipay-qr-code.png"           # 支付宝二维码
 
   [params.social]                                         # 社交链接
-    a-email = "mailto:mcpasin@gmail.com"
+    
     b-linkedin = "https://www.linkedin.com/in/marcopasin/"
     c-twitter = "https://twitter.com/mcpasin"
-    #d-facebook = "http://localhost:1313"
     d-github = "https://github.com/mcpasin"
+    #a-email = "mailto:mcpasin@gmail.com"
+    #d-facebook = "http://localhost:1313"
     #f-google = "http://localhost:1313"
     
     #h-weibo = "http://localhost:1313"
     #i-zhihu = "http://localhost:1313"
     #j-douban = "http://localhost:1313"
-    f-pocket = "https://getpocket.com/@53fA5g32dfv50Tk48epbymvp68T5daM9f5bL29T89eD5b5nWfSK3eE87jo2hy73c"
+    #f-pocket = "https://getpocket.com/@53fA5g32dfv50Tk48epbymvp68T5daM9f5bL29T89eD5b5nWfSK3eE87jo2hy73c"
     #l-tumblr = "http://localhost:1313"
     #m-instagram = "http://localhost:1313"
-    e-stack-overflow = "http://localhost:1313"
+    #e-stack-overflow = "http://localhost:1313"
