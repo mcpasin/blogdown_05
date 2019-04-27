@@ -2,7 +2,7 @@
 title: "Visualizing Grand Slam Tennis Winners"
 author: "Marco Pasin"
 date: 2019-04-26
-draft: true
+draft: false
 tags: ["rstats", "visualizations", "tidytuesday", "tennis"]
 ---
 
