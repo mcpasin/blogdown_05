@@ -12,7 +12,7 @@ Check out a few data prototypes & analysis I did recently.
 A web app that predicts a likely next word based on the word or sentence you type in. The prediction algorithm is based on a simple backoff model made in R, that searches inside a set of ngrams built using a corpora of english text.  
 
 ### <a href="https://mcpasincoursera.shinyapps.io/live_earthquakes/" target="_blank">Live Earthquakes Map</a>
-A Shiny app that shows the latest earthquakes as reported by [USGS] (https://earthquake.usgs.gov/). Earthquakes are plotted on a worl map along with their location, time, magnitude and depth.  
+A Shiny app that shows the latest earthquakes as reported by [USGS](https://earthquake.usgs.gov/). Earthquakes are plotted on a world map along with their location, time, magnitude and depth.  
 
 ### <a href="https://public.tableau.com/profile/marco.pasin#!/vizhome/BarcelonaDashboard/DASHBOARD" target="_blank">Where to Live in Barcelona?</a>
 Have you ever dreamt about moving to Barcelona? This dashboard, built wih Tableau, provides a map of the city and compares its boroughs using a set of indicators like rent/sales price, green areas and safety.  

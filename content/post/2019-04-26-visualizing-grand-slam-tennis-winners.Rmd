@@ -1,0 +1,333 @@
+---
+title: "Visualizing Grand Slam Tennis Winners"
+author: "Marco Pasin"
+date: 2019-04-26
+draft: true
+tags: ["rstats", "visualizations", "tidytuesday", "tennis"]
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(collapse = TRUE, warning = FALSE, message = FALSE)
+```
+
+Last week on a late submission for [#tidytuesday](https://github.com/rfordatascience/tidytuesday/tree/master/data/2019/2019-04-09) I created my first animation using the cool gganimate package. Below is my tweet along with a gif of the final visualization.
+
+```{r, fig.align='center'}
+blogdown::shortcode("tweet", "1118946590633472001")
+```
+
+
+Since it received some positive feedback, I've decided to write a post and share the steps I did to build it.
+
+This is actually also my very first post using blogdown (yes this site is built with blogdown!), so I am pretty excited share it!
+
+<br/>
+
+Lets start by loading the main libraries we are going to need. 
+```{r}
+library("tidyverse")
+library("gganimate")
+
+```
+
+### Import datasets
+```{r}
+player_dob <- readr::read_csv("https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2019/2019-04-09/player_dob.csv")
+
+grand_slams <- readr::read_csv("https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2019/2019-04-09/grand_slams.csv")
+
+grand_slam_timeline <- readr::read_csv("https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2019/2019-04-09/grand_slam_timeline.csv")
+
+```
+
+
+After a quick look at the files, I've focused on **grand_slams** dataset, which contains the tennis players winners for each Grand Slam tournament since 1968. 
+
+```{r}
+grand_slams
+```
+
+Lets quickly check which are the top winners. **Serena Williams** has won 23 tournaments so far, she is the player with more victories ever, followed by Steffi Graf with 22. While **Roger Federer** is top on the male rankng with 20 torunaments won at 2019.
+
+```{r}
+grand_slams %>% 
+  group_by(gender) %>% 
+  #filter(gender=="Male") %>% 
+  count(name, sort=TRUE)
+```
+<br/>
+
+### Prepare the data
+
+What I want to build it's an animation showing **how the winners ranking has been changing over the years**, since the first tournament until now (most recent data available is from 2019). So, I don't need the exact date but actually just the year.
+
+As the names indicates, `rolling_win_count` column is a rolling count of tournament won for each player. For example, Margaret Count won 2 tournaments in the same year in 1969, and her rollin count on the last tournament is 2. So, the first step to get the dataset tidy on a year level, is to get the maximum count for each year.
+
+```{r}
+win_per_year <- grand_slams %>%
+  group_by(year, name, gender) %>% 
+  summarize(win_count = max(rolling_win_count))
+
+win_per_year %>% head()
+```
+<br/>
+
+```{r, echo=FALSE, eval=FALSE}
+# Try gganimate on this dataset, even if I miss players values on some years because they didn't win anything.
+# 
+# p <- win_per_year %>% 
+#   ggplot(aes(x= name, y = win_count)) +
+#   geom_point()
+# 
+# p <- win_per_year %>% 
+#   filter(year >=2015) %>% 
+#   filter(gender=="Male") %>%
+#   ungroup() %>% 
+#   group_by(year) %>% 
+#   mutate(name = fct_reorder(name, win_count,desc=TRUE )) %>%
+#   ggplot(aes(x= name, y = win_count)) +
+#   geom_col() +
+#   coord_flip()
+# 
+# 
+# p + transition_time(year) +
+#   labs(title = "Year: {frame_time}")
+```
+
+Almost there. Margaret Curt won some tournaments in 1969, 1970, 1971 and 1973 was the last one. But she didn't win anything on 1972 and after 1973, so we don't have any more observations indicating what her current ranking was for eample in 1980 or even this year.
+
+Next step in data preparation is, for each player, to create a row for each year he/she didn't win and fill it with his/her previous win rolling count. I can do this with these 3 steps:  
+
+1. For each player create a vector of complete years between their first win and now (I'll use a `for` loop for this)
+2. Merge it back with the original grand slam dataset (a `left_join` will return null values where it doesn't find a value for the win_rolling_count variable)
+3. Impute null values with the immediate previous available win_rolling_count (I use the `fill` function)
+
+
+```{r}
+
+# Get max year available in the dataset
+max_year <- max(grand_slams$year)
+
+##Test it on a smaller subset e.g.:
+# smaller_subset <- win_per_year %>%
+#   filter(str_detect(name, "Federer|del Potro|Williams|Court"))
+# players_subset <- smaller_subset
+
+players_subset <- win_per_year # I am taking all players
+
+# Get min year for each player (that is year of first tournament won)
+player_min_year <- players_subset %>% 
+  group_by(name) %>%
+  summarise(min_year = min(year))
+
+# Initialize an empty dataframe to be used to store data in for loop
+tmp_df <- data.frame()
+
+for (i in player_min_year$name) {
+  ##print(i)
+
+  min_year <- player_min_year %>% 
+    filter(name == i) %>%
+    select(min_year) %>%
+    pull()
+  
+  # create vector of complete years between his/her first win and now
+  complete_dates <- seq(min_year, max_year)
+  
+  # for each player, create dataframe with a row for each year between his/her first win and now
+  complete_df <- data.frame(name = i, year = complete_dates)
+  ##print(complete_df)
+  
+  # concatenate current player dataframe to previous one
+  tmp_df <- tmp_df %>%
+    bind_rows(complete_df)
+
+}
+
+
+# Left join player complete years dataframe with grand slam
+merged_df <- tmp_df %>% 
+  left_join(players_subset, by=c("name", "year"))
+
+# Fill in NAs with previous values
+merged_df_filled <- merged_df %>% fill(win_count, gender)
+```
+
+```{r}
+merged_df_filled %>% head()
+```
+
+Cool! We now have a dataset prepared for creating the visualization :smiley:
+
+<br/>
+
+### Create the animation
+
+```{r, echo=FALSE, eval=FALSE}
+# theme_set(theme_light())
+# 
+# p <- merged_df_filled %>% 
+#   filter(year >=1990) %>% 
+#   #filter(gender=="Male") %>%
+#   ungroup() %>% 
+#   group_by(year) %>% 
+#   mutate(name = fct_reorder(name, win_count, desc=TRUE )) %>%
+#   ggplot(aes(x= name, y = win_count, 
+#              fill = name)) +
+#   geom_col() +
+#   coord_flip()
+# 
+# p
+# 
+# 
+# p + transition_time(year) +
+#   labs(title = "Grand Slam titles won ranking: how is being changing over time",
+#        subtitle = "Year: {frame_time}",
+#        x = "",
+#        y = "titles won")
+```
+
+Creating an animation with `gganimate` package is pretty easy, there are a couple of very nice examples you can check. Where I've been struggling for this specific visualization was to keep the bars propertly sorted throughout time and and make them overtaking each others. Luckily this [Stackoverflow answer](https://stackoverflow.com/questions/53162821/animated-sorted-bar-chart-with-bars-overtaking-each-other) helped me a lot.
+
+```{r, eval=FALSE}
+df1 <- merged_df_filled %>% 
+  #filter(year >=2015) %>% 
+  filter(gender=="Male") %>%
+  ungroup() %>% 
+  group_by(year) %>% 
+  mutate(rank = row_number(-win_count)*1) #this is key to mantain the sorting
+
+slam_theme <- theme(
+  plot.title = element_text(hjust = 0, size = 22, face = 'bold'),
+  plot.subtitle = element_text(hjust = 0, size = 16),
+  axis.ticks.y = element_blank(), # after flip
+  axis.text.y  = element_blank(), # after flip
+  panel.grid.major.y = element_blank(),
+  panel.grid.minor.y = element_blank(),
+  plot.margin = margin(1, 1, 1, 4, "cm"),
+  panel.background = element_rect(fill = "#E0E0FF", colour = NA),
+  plot.background = element_rect(fill = "#E0E0FF", colour = NA)
+  ) #DEE7D7
+
+theme_set(theme_bw() + slam_theme)
+
+# Create animation object
+p <- ggplot(df1, aes(rank, group = name, fill = as.factor(name), 
+                     color = as.factor(name))) +
+  geom_tile(aes(y = win_count/2,
+                height = win_count,
+                width = 0.9), alpha = 0.8, color = NA) +
+  geom_text(aes(y = 0, label = paste(name, " ")), vjust = 0.2, hjust = 1) +
+  geom_text(aes(y = win_count, label = as.factor(win_count)), nudge_y = 0.2) +
+
+  coord_flip(clip = "off", expand = FALSE) +
+  scale_y_continuous(labels = scales::comma) +
+  scale_x_reverse() +
+  guides(color = FALSE, fill = FALSE) +
+
+  labs(title='Grand Slam male titles ranking: how changed over time',
+       subtitle ="Year: {closest_state}",
+       x = "", 
+       y = "titles won") +
+
+  transition_states(year, transition_length = 4, state_length = 3) +
+  ease_aes('cubic-in-out')
+
+# Render animation object and set parameters
+animate(p, fps = 20, duration = 35, width = 800, height = 600, detail = 2)
+
+```
+
+
+![](https://raw.githubusercontent.com/mcpasin/tidytuesdays/master/grand_slams_09042019/gs_male_ranking.gif)
+
+```{r, echo=FALSE, eval=FALSE}
+#or read it from a local folder
+![](/img/gs_male_ranking.gif)
+```
+
+<br/>
+
+
+
+###Save animation as gif file
+This step is useful if you want to share your gif for itance in a tweet like I did or push it to github and then embed it in a post by link it to it (the above gif is sourced from my github repo).
+```{r, eval=FALSE}
+library(magick)
+
+image <- animate(p, fps = 25, duration = 35, width = 800, height = 600)
+
+anim_save("gs_male_ranking.gif", image)
+
+```
+<br/>
+
+#### Bonus: Faceting the animation
+Here I want to **include both genders** in the visualization by using one facet for males and the other for females.  I am going to make a few adjustments on the viz in order to accomodate two facets and keep the visualization neat:  
+- remove colours for players and use just two colours: pink for females and blue fo men
+- add more space between the two facets
+```{r, eval=FALSE}
+df1 <- merged_df_filled %>% 
+  #filter(year >=2005) %>% 
+  #filter(gender=="Male") %>%
+  ungroup() %>% 
+  group_by(gender, year) %>% 
+  mutate(rank = row_number(-win_count)*1) 
+
+slam_theme <- theme(
+  plot.title = element_text(hjust = 0, size = 22, face = 'bold'),
+  plot.subtitle = element_text(hjust = 0, size = 16),
+  axis.ticks.y = element_blank(), # after flip
+  axis.text.y  = element_blank(), # after flip
+  panel.grid.major.y = element_blank(),
+  panel.grid.minor.y = element_blank(),
+  plot.margin = margin(1, 1, 1, 4, "cm"),
+  panel.background = element_rect(fill = "#E0E0FF", colour = NA),
+  plot.background = element_rect(fill = "#E0E0FF", colour = NA)
+  ) #DEE7D7
+
+theme_set(theme_bw() + slam_theme)
+
+# Create animation object
+p <- ggplot(df1, aes(rank, group = name, 
+                     fill = as.factor(gender), color = as.factor(gender))) +
+  geom_tile(aes(y = win_count/2,
+                height = win_count,
+                width = 0.9), alpha = 0.8, color = NA) +
+  geom_text(aes(y = 0, label = paste(name, " ")), vjust = 0.2, hjust = 1) +
+  #geom_text(aes(y = win_count, label = name), nudge_y = -3) +
+  geom_text(aes(y = win_count, label = as.character(win_count)), nudge_y = 0.5) +
+
+  coord_flip(clip = "off", expand = FALSE) +
+  scale_y_continuous(labels = scales::comma) +
+  scale_x_reverse() +
+  guides(color = FALSE, fill = FALSE) +
+  
+  facet_wrap(~gender) +
+  scale_fill_manual(values = c("#B775B4", "#3b7db5")) +
+  theme(panel.spacing = unit(8, "lines")) +
+
+  labs(title='Grand Slam titles ranking by gender: how changed over time',
+       subtitle ="Year: {closest_state}",
+       x = "", 
+       y = "titles won") +
+
+  transition_states(year, transition_length = 4, state_length = 3) +
+  ease_aes('cubic-in-out')
+
+# Render animation object and set parameters
+animate(p, fps = 20, duration = 35, width = 800, height = 600, detail = 2)
+
+```
+
+![](https://raw.githubusercontent.com/mcpasin/tidytuesdays/master/grand_slams_09042019/gs_facets_gender_ranking.gif)
+
+<br/>
+I still need to spend more time going through the gganimate documentation and try to adjust more parameters. However, the code above created some solid visualizations and so far I am pretty happy with the results! 
+
+![](https://media.giphy.com/media/xUOxf7XfmpxuSode1O/giphy.gif)
+
+<br/>
+
+Hope you enjoyed the post!
+

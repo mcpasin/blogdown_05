@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tidytuesday on Marco Pasin - my new data blog</title>
+    <link>/tags/tidytuesday/</link>
+    <description>Recent content in Tidytuesday on Marco Pasin - my new data blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 26 Apr 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/tidytuesday/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Visualizing Grand Slam Tennis Winners</title>
+      <link>/post/2019-04-26-visualizing-grand-slam-tennis-winners/</link>
+      <pubDate>Fri, 26 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/post/2019-04-26-visualizing-grand-slam-tennis-winners/</guid>
+      <description>Last week on a late submission for #tidytuesday I created my first animation using the cool gganimate package. Below is my tweet along with a gif of the final visualization.
+blogdown::shortcode(&amp;quot;tweet&amp;quot;, &amp;quot;1118946590633472001&amp;quot;)In a very very late #tidytuesday submission, I&amp;#39;ve used #rstats gganimate to look at Grand Slam #tennis players titles ranking. pic.twitter.com/NhCDoRfTJq
+&amp;mdash; Marco Pasin (@mcpasin) April 18, 2019  Since it received some positive feedback, I’ve decided to write a post and share the steps I did to build it.</description>
+    </item>
+    
+  </channel>
+</rss>

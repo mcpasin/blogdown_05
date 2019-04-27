@@ -17,6 +17,6 @@ my previous projects under the Portfolio section. I've also launched [analyticsf
 This site is made with R and the super cool _blogdown_ package. So, expect as much code and data :computer: :bar_chart: as words :clipboard: .
  
 
-Last but not least, feel free to connect for any professional collaboration or just to say Hi! :smiley: :hand: .
+Last but not least, feel free to connect for any professional collaboration or just to say Hi!  :hand: :smiley:
 
 

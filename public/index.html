@@ -18,7 +18,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="xianmin" />
+<meta name="author" content="Marco Pasin" />
   <meta name="description" content="Marco Pasin personal site" />
   <meta name="keywords" content="blog, mcpasin, marco" />
 
@@ -57,7 +57,7 @@
 
 
 
-<meta property="og:updated_time" content="2018-03-25T21:38:52&#43;08:00"/>
+<meta property="og:updated_time" content="2019-04-26T00:00:00&#43;00:00"/>
 
 
 
@@ -84,6 +84,13 @@
   <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
 <![endif]-->
 
+
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-31499810-9', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='//www.google-analytics.com/analytics.js'></script>
 
 
 
@@ -148,40 +155,24 @@
     
       <article class="post bg-white">
   <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/post/shortcodes-preview/">Shortcodes Preview</a></h1>
+    <h1 class="post-title"><a class="post-link" href="/post/2019-04-26-visualizing-grand-slam-tennis-winners/">Visualizing Grand Slam Tennis Winners</a></h1>
     <div class="post-meta">
-      <span class="post-time"> 2018-03-04 </span>
-      <div class="post-category">
-          
-            <a href="/categories/shortcodes/"> shortcodes </a>
-          
-            <a href="/categories/index/"> index </a>
-          
-        </div>
-      <span class="more-meta"> 341 words </span>
-      <span class="more-meta"> 2 min read </span>
+      <span class="post-time"> 2019-04-26 </span>
+      
+      <span class="more-meta"> 1684 words </span>
+      <span class="more-meta"> 8 min read </span>
     </div>
   </header>
   
   <div class="post-content">
     
     <div class="post-summary">
-      <h2 id="what-a-shortcode-is">What a Shortcode is</h2>
-
-<p>Hugo loves Markdown because of its simple content format, but there are times when Markdown falls short. Often, content authors are forced to add raw HTML (e.g., video <code>&lt;iframes&gt;</code>) to Markdown content. We think this contradicts the beautiful simplicity of Markdown&rsquo;s syntax.</p>
-
-<p>Hugo created <strong>shortcodes</strong> to circumvent these limitations.</p>
-
-<p>A shortcode is a simple snippet inside a content file that Hugo will render using a predefined template. Note that shortcodes will not work in template files. If you need the type of drop-in functionality that shortcodes provide but in a template, you most likely want a [partial template][partials] instead.</p>
-
-<p>In addition to cleaner Markdown, shortcodes can be updated any time to reflect new classes, techniques, or standards. At the point of site generation, Hugo shortcodes will easily merge in your changes. You avoid a possibly complicated search and replace operation.</p>
-
-<p>More details: <a href="https://gohugo.io/content-management/shortcodes/">https://gohugo.io/content-management/shortcodes/</a></p>
-
-<p></p>
+      Last week on a late submission for #tidytuesday I created my first animation using the cool gganimate package. Below is my tweet along with a gif of the final visualization.
+blogdown::shortcode(&quot;tweet&quot;, &quot;1118946590633472001&quot;)In a very very late #tidytuesday submission, I&#39;ve used #rstats gganimate to look at Grand Slam #tennis players titles ranking. pic.twitter.com/NhCDoRfTJq
+&mdash; Marco Pasin (@mcpasin) April 18, 2019  Since it received some positive feedback, I’ve decided to write a post and share the steps I did to build it.
     </div>
     <div class="read-more">
-      <a href="/post/shortcodes-preview/" class="read-more-link">Read more</a>
+      <a href="/post/2019-04-26-visualizing-grand-slam-tennis-winners/" class="read-more-link">Read more</a>
     </div>
     
   </div>
@@ -220,12 +211,9 @@
 
     <footer id="footer" class="footer">
       <div class="social-links">
-      <a href="mailto:mcpasin@gmail.com" class="iconfont icon-email" title="email"></a>
       <a href="https://www.linkedin.com/in/marcopasin/" class="iconfont icon-linkedin" title="linkedin"></a>
       <a href="https://twitter.com/mcpasin" class="iconfont icon-twitter" title="twitter"></a>
       <a href="https://github.com/mcpasin" class="iconfont icon-github" title="github"></a>
-      <a href="http://localhost:1313" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
-      <a href="https://getpocket.com/@53fA5g32dfv50Tk48epbymvp68T5daM9f5bL29T89eD5b5nWfSK3eE87jo2hy73c" class="iconfont icon-pocket" title="pocket"></a>
   <a href="/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
 </div>
 
@@ -240,13 +228,11 @@
 
   <span class="copyright-year">
     &copy; 
-    
-      2017 - 
     2019
     <span class="heart">
       <i class="iconfont icon-heart"></i>
     </span>
-    <span class="author">xianmin</span>
+    <span class="author">Marco Pasin</span>
   </span>
 </div>
     </footer>
