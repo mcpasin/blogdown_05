@@ -2,7 +2,7 @@
 title: "About me"
 date: '2018-03-25T21:38:52+08:00'
 mathjax: no
-menu: main
+menu: "main"
 comment: no
 ---
 
