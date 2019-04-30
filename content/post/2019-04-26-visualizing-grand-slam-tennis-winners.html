@@ -16,14 +16,16 @@ tags: ["rstats", "visualizations", "tidytuesday", "tennis"]
 <p><br/></p>
 <p>Lets start by loading the main libraries we are going to need.</p>
 <pre class="r"><code>library(&quot;tidyverse&quot;)
-library(&quot;gganimate&quot;)</code></pre>
+library(&quot;gganimate&quot;)  
+</code></pre>
 <div id="import-datasets" class="section level3">
 <h3>Import datasets</h3>
 <pre class="r"><code>player_dob &lt;- readr::read_csv(&quot;https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2019/2019-04-09/player_dob.csv&quot;)
 
-grand_slams &lt;- readr::read_csv(&quot;https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2019/2019-04-09/grand_slams.csv&quot;)
+grand_slams &lt;- readr::read_csv(&quot;https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2019/2019-04-09/grand_slams.csv&quot;)  
 
-grand_slam_timeline &lt;- readr::read_csv(&quot;https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2019/2019-04-09/grand_slam_timeline.csv&quot;)</code></pre>
+grand_slam_timeline &lt;- readr::read_csv(&quot;https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2019/2019-04-09/grand_slam_timeline.csv&quot;)  
+</code></pre>
 <p>After a quick look at the files, I’ve focused on <strong>grand_slams</strong> dataset, which contains the tennis players winners for each Grand Slam tournament since 1968.</p>
 <pre class="r"><code>grand_slams
 ## # A tibble: 416 x 6
@@ -81,7 +83,6 @@ win_per_year %&gt;% head()
 ## 4  1968 Nancy Richey     Female      1.00
 ## 5  1968 Rod Laver        Male        1.00
 ## 6  1968 Virginia Wade    Female      1.00</code></pre>
-<p><br/></p>
 <p>Almost there. Margaret Curt won some tournaments in 1969, 1970, 1971 and 1973 was the last one. But she didn’t win anything on 1972 and after 1973, so we don’t have any more observations indicating what her current ranking was for eample in 1980 or even this year.</p>
 <p>Next step in data preparation is, for each player, to create a row for each year he/she didn’t win and fill it with his/her previous win rolling count. I can do this with these 3 steps:</p>
 <ol style="list-style-type: decimal">

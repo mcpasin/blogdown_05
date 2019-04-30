@@ -15,7 +15,7 @@ A web app that predicts a likely next word based on the word or sentence you typ
 A Shiny app that shows the latest earthquakes as reported by [USGS](https://earthquake.usgs.gov/). Earthquakes are plotted on a world map along with their location, time, magnitude and depth.  
 
 ### <a href="https://public.tableau.com/profile/marco.pasin#!/vizhome/BarcelonaDashboard/DASHBOARD" target="_blank">Where to Live in Barcelona?</a>
-Have you ever dreamt about moving to Barcelona? This dashboard, built wih Tableau, provides a map of the city and compares its boroughs using a set of indicators like rent/sales price, green areas and safety.  
+Have you ever thought of moving to Barcelona? This dashboard, built wih Tableau, provides a map of the city and compares its boroughs using a set of indicators like rent/sales price, green areas and safety.  
 
 ### <a href="http://www.analyticsforfun.com/2017/03/actionable-data-analysis-for-ecommerce.html" target="_blank">Ecommerce Products Matrix</a> 
 An example of actionable product analysis that combines the power of data visualization with some descriptive statistics. The visualisation is built via Tableau and uses clickstream data from the Google Merchandise Store site.

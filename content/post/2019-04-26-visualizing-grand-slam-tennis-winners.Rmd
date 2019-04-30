@@ -26,7 +26,8 @@ This is actually also my very first post using blogdown (yes this site is built 
 Lets start by loading the main libraries we are going to need. 
 ```{r}
 library("tidyverse")
-library("gganimate")
+library("gganimate")  
+
 
 ```
 
@@ -34,9 +35,10 @@ library("gganimate")
 ```{r}
 player_dob <- readr::read_csv("https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2019/2019-04-09/player_dob.csv")
 
-grand_slams <- readr::read_csv("https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2019/2019-04-09/grand_slams.csv")
+grand_slams <- readr::read_csv("https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2019/2019-04-09/grand_slams.csv")  
 
-grand_slam_timeline <- readr::read_csv("https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2019/2019-04-09/grand_slam_timeline.csv")
+grand_slam_timeline <- readr::read_csv("https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2019/2019-04-09/grand_slam_timeline.csv")  
+
 
 ```
 
@@ -70,7 +72,7 @@ win_per_year <- grand_slams %>%
 
 win_per_year %>% head()
 ```
-<br/>
+
 
 ```{r, echo=FALSE, eval=FALSE}
 # Try gganimate on this dataset, even if I miss players values on some years because they didn't win anything.
