@@ -24,7 +24,7 @@
 &lt;script async src=&#34;https://platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;
 
 &lt;p&gt;Since it received some positive feedback, I’ve decided to write a post and share the steps I did to build it.&lt;/p&gt;
-&lt;p&gt;This is actually also my very first post using blogdown (yes this site is built with blogdown!), so I am pretty excited share it!&lt;/p&gt;
+&lt;p&gt;This is actually also my very first post using &lt;code&gt;blogdown&lt;/code&gt; (yes this site is built with R &amp;amp; blogdown :boom: ), so I am pretty excited share it!&lt;/p&gt;
 &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
 &lt;p&gt;Lets start by loading the main libraries we are going to need.&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(&amp;quot;tidyverse&amp;quot;)
@@ -38,7 +38,7 @@ grand_slams &amp;lt;- readr::read_csv(&amp;quot;https://raw.githubusercontent.co
 
 grand_slam_timeline &amp;lt;- readr::read_csv(&amp;quot;https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2019/2019-04-09/grand_slam_timeline.csv&amp;quot;)  
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;After a quick look at the files, I’ve focused on &lt;strong&gt;grand_slams&lt;/strong&gt; dataset, which contains the tennis players winners for each Grand Slam tournament since 1968.&lt;/p&gt;
+&lt;p&gt;After a quick look at the files, I’ve focused on &lt;strong&gt;grand_slams&lt;/strong&gt; dataset :tennis: , which contains the tennis players winners for each Grand Slam tournament since 1968.&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;grand_slams
 ## # A tibble: 416 x 6
 ##     year grand_slam      name      rolling_win_cou~ tournament_date gender
@@ -157,7 +157,7 @@ merged_df_filled &amp;lt;- merged_df %&amp;gt;% fill(win_count, gender)&lt;/code
 ## 4 Adriano Panatta 1979   Male         1
 ## 5 Adriano Panatta 1980   Male         1
 ## 6 Adriano Panatta 1981   Male         1&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Cool! We now have a dataset prepared for creating the visualization :smiley:&lt;/p&gt;
+&lt;p&gt;Cool! We now have a dataset prepared :tennis::tennis::tennis: for creating the visualization :smiley:&lt;/p&gt;
 &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;div id=&#34;create-the-animation&#34; class=&#34;section level3&#34;&gt;

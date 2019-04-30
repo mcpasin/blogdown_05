@@ -82,7 +82,7 @@ blogdown::shortcode(&quot;tweet&quot;, &quot;1118946590633472001&quot;)In a ver
 
 <meta itemprop="datePublished" content="2019-04-26T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2019-04-26T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="1684">
+<meta itemprop="wordCount" content="1691">
 
 
 
@@ -174,7 +174,7 @@ ga('send', 'pageview');
       <div class="post-meta">
         <span class="post-time"> 2019-04-26 </span>
         
-        <span class="more-meta"> 1684 words </span>
+        <span class="more-meta"> 1691 words </span>
         <span class="more-meta"> 8 min read </span>
       </div>
     </header>
@@ -197,7 +197,7 @@ ga('send', 'pageview');
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 <p>Since it received some positive feedback, I’ve decided to write a post and share the steps I did to build it.</p>
-<p>This is actually also my very first post using blogdown (yes this site is built with blogdown!), so I am pretty excited share it!</p>
+<p>This is actually also my very first post using <code>blogdown</code> (yes this site is built with R &amp; blogdown :boom: ), so I am pretty excited share it!</p>
 <p><br/></p>
 <p>Lets start by loading the main libraries we are going to need.</p>
 <pre class="r"><code>library(&quot;tidyverse&quot;)
@@ -211,7 +211,7 @@ grand_slams &lt;- readr::read_csv(&quot;https://raw.githubusercontent.com/rforda
 
 grand_slam_timeline &lt;- readr::read_csv(&quot;https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2019/2019-04-09/grand_slam_timeline.csv&quot;)  
 </code></pre>
-<p>After a quick look at the files, I’ve focused on <strong>grand_slams</strong> dataset, which contains the tennis players winners for each Grand Slam tournament since 1968.</p>
+<p>After a quick look at the files, I’ve focused on <strong>grand_slams</strong> dataset :tennis: , which contains the tennis players winners for each Grand Slam tournament since 1968.</p>
 <pre class="r"><code>grand_slams
 ## # A tibble: 416 x 6
 ##     year grand_slam      name      rolling_win_cou~ tournament_date gender
@@ -330,7 +330,7 @@ merged_df_filled &lt;- merged_df %&gt;% fill(win_count, gender)</code></pre>
 ## 4 Adriano Panatta 1979   Male         1
 ## 5 Adriano Panatta 1980   Male         1
 ## 6 Adriano Panatta 1981   Male         1</code></pre>
-<p>Cool! We now have a dataset prepared for creating the visualization :smiley:</p>
+<p>Cool! We now have a dataset prepared :tennis::tennis::tennis: for creating the visualization :smiley:</p>
 <p><br/></p>
 </div>
 <div id="create-the-animation" class="section level3">

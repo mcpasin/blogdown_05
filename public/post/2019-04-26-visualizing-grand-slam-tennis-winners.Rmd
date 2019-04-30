@@ -19,7 +19,7 @@ blogdown::shortcode("tweet", "1118946590633472001")
 
 Since it received some positive feedback, I've decided to write a post and share the steps I did to build it.
 
-This is actually also my very first post using blogdown (yes this site is built with blogdown!), so I am pretty excited share it!
+This is actually also my very first post using `blogdown` (yes this site is built with R & blogdown :boom: ), so I am pretty excited share it!
 
 <br/>
 
@@ -43,7 +43,7 @@ grand_slam_timeline <- readr::read_csv("https://raw.githubusercontent.com/rforda
 ```
 
 
-After a quick look at the files, I've focused on **grand_slams** dataset, which contains the tennis players winners for each Grand Slam tournament since 1968. 
+After a quick look at the files, I've focused on **grand_slams** dataset :tennis: , which contains the tennis players winners for each Grand Slam tournament since 1968. 
 
 ```{r}
 grand_slams
@@ -159,7 +159,7 @@ merged_df_filled <- merged_df %>% fill(win_count, gender)
 merged_df_filled %>% head()
 ```
 
-Cool! We now have a dataset prepared for creating the visualization :smiley:
+Cool! We now have a dataset prepared :tennis::tennis::tennis: for creating the visualization :smiley:
 
 <br/>
 
